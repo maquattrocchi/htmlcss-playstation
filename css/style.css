@@ -22,7 +22,7 @@ body{
     background-position: center;
     background-size: cover;
 }
-.cs_hero img{
+.cs_hero img:not(.img-fluid){
     width: 250px;
 }
 .cs_clearfix:after {
@@ -34,6 +34,9 @@ body{
     padding: 6px 10px;
     border-radius:100px;
     text-decoration: none;
+}
+.cs_lightgrey_btn{
+    background-color: var(--cs_lightgrey_btn);
 }
 .cs_lightgrey_text{
     color: var(--cs_lightgrey);
@@ -92,7 +95,7 @@ header{
 /* /header */
 
 /* main */
-section{
+section:not(#play_plus){
     padding: 50px 0;
 }
 /* jumbotron */
@@ -144,4 +147,7 @@ section{
 }
 #nuove_uscite .card-body{
     padding: 0.5rem 0;
+}
+#play_plus{
+    background-color: var(--cs_lightgrey_bg);
 }
