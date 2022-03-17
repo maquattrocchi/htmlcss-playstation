@@ -1,0 +1,91 @@
+:root{
+    --cs_black: black;
+    --cs_white: white;
+    --cs_red: #CD3D0F;
+    --cs_darkgrey: #1F1F1F;
+    --cs_lightgrey: #848484;
+    --cs_lightgrey_bg: #BEBCBB;
+    --cs_lightgrey_btn: #D9DADC;
+    --cs_blue: #161C3B;
+    --cs_lightblue: #00439C;
+}
+.debug{
+    border: 1px solid black;
+    height: 50px;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.cs_clearfix:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+.cs_btn{
+    padding: 10px;
+    border-radius:100px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    background-color: var(--cs_red);
+}
+/* header */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.cs_header_top{
+    background-color: var(--cs_black);
+    padding: 10px 20px;
+}
+.cs_header_top img{
+    float: right;
+    width: 100px;
+}
+.cs_header_down{
+    position: relative;
+    background-color: var(--cs_white);
+}
+.cs_header_down .cs_nav_right{
+    float: right;
+}
+.cs_header_down .navbar-light .navbar-nav .nav-link {
+    color: var(--cs_black);
+}
+.cs_header_down .dropdown{
+    position: static;
+}
+.cs_header_down .dropdown-menu{
+    margin-top: 0;
+    border: 0;
+    right: 0;
+    left: 0;
+}
+/* /header */
+
+/* main */
+section{
+    margin: 30px 0;
+}
+/* jumbotron */
+#jumbotron{
+    padding: 200px 0 20px;
+    color: var(--cs_white);
+    margin-top: 114px;
+    background:  url(../img/jumbo-bg.png) center;
+    background-size: cover;
+}
+#jumbotron img{
+    width: 250px;
+}
+/* games */
+#games img{
+    position: relative;
+    border: 2px solid transparent;
+    padding: 2px;
+    border-radius: 15px;
+}
+#games img:hover{
+    bottom: 20px;
+}
