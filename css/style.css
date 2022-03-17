@@ -9,12 +9,22 @@
     --cs_blue: #161C3B;
     --cs_lightblue: #00439C;
 }
+/* general */
 .debug{
     border: 1px solid black;
     height: 50px;
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
+}
+.cs_hero{
+    padding: 30px 0;
+    color: var(--cs_white);
+    background-position: center;
+    background-size: cover;
+}
+.cs_hero img{
+    width: 250px;
 }
 .cs_clearfix:after {
     content:"";
@@ -28,6 +38,9 @@ body{
 }
 .cs_lightgrey_text{
     color: var(--cs_lightgrey);
+}
+.cs_bg_red{
+    background-color: var(--cs_red);
 }
 /* header */
 header{
@@ -73,16 +86,8 @@ section:not(#jumbotron){
 /* jumbotron */
 #jumbotron{
     padding: 200px 0 20px;
-    color: var(--cs_white);
     margin-top: 114px;
-    background:  url(../img/jumbo-bg.png) center;
-    background-size: cover;
-}
-#jumbotron img{
-    width: 250px;
-}
-#jumbotron .cs_btn{
-    background-color: var(--cs_red);
+    background-image: url(../img/jumbo-bg.png);
 }
 /* games */
 #games img{
@@ -109,4 +114,8 @@ section:not(#jumbotron){
 #play-5 .cs_card:hover{
     opacity: 1;
     border-color: #0d6efd;
+}
+/* takes-two */
+#takes_two{
+    background-image: url(../img/it-takes-two-hero-banner-desktop.jpg);
 }
