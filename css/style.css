@@ -135,7 +135,7 @@ section{
 #nuove_uscite{
     background-color: var(--cs_darkgrey);
 }
-#nuove_uscite .card{
+#nuove_uscite .card, #esplora .card{
     background-color: transparent;
     border: none;
 }
