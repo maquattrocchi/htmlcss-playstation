@@ -31,7 +31,7 @@ body{
     clear:both;
 }
 .cs_btn{
-    padding: 6px 10px;
+    padding: 8px 10px;
     border-radius:100px;
     text-decoration: none;
 }
@@ -46,6 +46,9 @@ body{
 }
 .cs_bg_black{
     background-color: var(--cs_black);
+}
+.cs_black_text{
+    color: var(--cs_black);
 }
 /* header */
 header{
@@ -95,7 +98,7 @@ header{
 /* /header */
 
 /* main */
-section:not(#play_plus){
+section:not(#play_plus, #play_now){
     padding: 50px 0;
 }
 /* jumbotron */
@@ -148,6 +151,23 @@ section:not(#play_plus){
 #nuove_uscite .card-body{
     padding: 0.5rem 0;
 }
+/* #play_plus */
 #play_plus{
     background-color: var(--cs_lightgrey_bg);
+}
+/* play now */
+#play_now{
+    background-color: var(--cs_blue);
+}
+
+
+@media screen and (min-width: 768px) {
+    .cs_width_50{
+        width: 75%;
+    }
+}
+@media screen and (min-width: 992px) {
+    .cs_width_50{
+        width: 50%;
+    }
 }
