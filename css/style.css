@@ -22,7 +22,7 @@ body{
     background-position: center;
     background-size: cover;
 }
-.cs_hero img:not(.img-fluid){
+.cs_hero img:not(.img-fluid), .cs_sie{
     width: 250px;
 }
 .cs_clearfix:after {
@@ -33,7 +33,6 @@ body{
 .cs_btn{
     padding: 8px 10px;
     border-radius:100px;
-    text-decoration: none;
 }
 .cs_lightgrey_btn{
     background-color: var(--cs_lightgrey_btn);
@@ -49,6 +48,9 @@ body{
 }
 .cs_black_text{
     color: var(--cs_black);
+}
+a{
+    text-decoration: none;
 }
 /* header */
 header{
@@ -98,7 +100,7 @@ header{
 /* /header */
 
 /* main */
-section:not(#play_plus, #play_now){
+section:not(#play_plus, #play_now), footer{
     padding: 50px 0;
 }
 /* jumbotron */
@@ -159,8 +161,25 @@ section:not(#play_plus, #play_now){
 #play_now{
     background-color: var(--cs_blue);
 }
-
-
+/* /main */
+/* footer */
+footer{
+    background-color: var(--cs_lightblue);
+    color: var(--cs_white);
+}
+.cs_foot_logo{
+    width: 70px;
+}
+.cs_globe{
+    width: 20px;
+}
+footer a{
+    color: var(--cs_white);
+}
+footer li{
+    padding: 5px 0;
+}
+/* media */
 @media screen and (min-width: 768px) {
     .cs_width_50{
         width: 75%;
