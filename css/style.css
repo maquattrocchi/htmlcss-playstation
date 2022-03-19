@@ -8,6 +8,7 @@
     --cs_lightgrey_btn: #D9DADC;
     --cs_blue: #161C3B;
     --cs_lightblue: #00439C;
+    --cs_blue_btn: #2D64E6;
 }
 /* general */
 .debug{
@@ -19,7 +20,7 @@ body{
 }
 .cs_hero{
     color: var(--cs_white);
-    background-position: center;
+    background-position: center top;
     background-size: cover;
 }
 .cs_hero img:not(.img-fluid), .cs_sie{
@@ -30,27 +31,62 @@ body{
     display:block;
     clear:both;
 }
-.cs_btn{
-    padding: 8px 10px;
-    border-radius:100px;
-}
-.cs_lightgrey_btn{
-    background-color: var(--cs_lightgrey_btn);
-}
 .cs_lightgrey_text{
     color: var(--cs_lightgrey);
 }
-.cs_bg_red{
-    background-color: var(--cs_red);
-}
-.cs_bg_black{
-    background-color: var(--cs_black);
-}
-.cs_black_text{
-    color: var(--cs_black);
-}
 a{
     text-decoration: none;
+}
+a:hover{
+    color: var(--cs_white);
+}
+/* bottoni */
+.cs_btn_contorno{
+    padding: 7px 2px;
+    border-radius: 100px;
+    border: 3px solid transparent;
+    display: inline-block;
+}
+.cs_btn{
+    padding: 8px 10px;
+    border-radius:100px;
+    color: var(--cs_white);
+}
+.cs_red_btn{
+    background-color: var(--cs_red);
+}
+.cs_blue_btn{
+    background-color: var(--cs_blue_btn);
+}
+.cs_lightgrey_btn{
+    background-color: var(--cs_lightgrey_btn);
+    color: var(--cs_blue_btn);
+}
+.cs_white_btn{
+    background-color: var(--cs_white);
+    color: var(--cs_black);
+}
+.cs_black_btn{
+    background-color: var(--cs_black);
+    color: var(--cs_white);
+}
+#play-5 .cs_btn_contorno:hover, #esplora .cs_btn_contorno:hover{
+    border-color: #0d6efd;
+}
+#takes_two .cs_btn_contorno:hover, #jumbotron .cs_btn_contorno:hover{
+    border-color: var(--cs_red);
+}
+#play_plus .cs_btn_contorno:hover{
+    border-color: var(--cs_lightgrey_btn);
+}
+#play_plus .cs_btn:hover{
+    color: var(--cs_blue_btn);
+}
+#play_now .cs_btn_contorno:hover{
+    border-color: var(--cs_white);
+}
+#play_now .cs_btn:hover{
+    color: var(--cs_black);
 }
 /* header */
 header{
@@ -100,7 +136,7 @@ header{
 /* /header */
 
 /* main */
-section:not(#play_plus, #play_now), footer{
+section:not(#jumbotron, #play_plus, #play_now), footer{
     padding: 50px 0;
 }
 /* jumbotron */
@@ -112,13 +148,18 @@ section:not(#play_plus, #play_now), footer{
 /* games */
 #games img{
     position: relative;
+    bottom: 0;
     border: 2px solid transparent;
     padding: 2px;
     border-radius: 15px;
+    transition: all 0.8s;
 }
 #games img:hover{
     bottom: 20px;
+    box-shadow: 0 10px 14px  #888888;
+    border-color: #0d6efd;
 }
+
 /* play-5 */
 #play-5 .cs_card{
     cursor: pointer;
@@ -128,7 +169,7 @@ section:not(#play_plus, #play_now), footer{
 #play-5 h2{
     font-size: 2rem;
 }
-.disabler_card{
+.disabled_card{
     opacity: 0.5;
 }
 #play-5 .cs_card:hover{
