@@ -35,6 +35,7 @@ body{
     color: var(--cs_lightgrey);
 }
 a{
+    color: var(--cs_white);
     text-decoration: none;
 }
 a:hover{
@@ -97,6 +98,7 @@ header{
     width: 100%;
     z-index: 1000;
 }
+/* header top */
 .cs_header_top{
     background-color: var(--cs_black);
     padding: 10px 20px;
@@ -105,30 +107,61 @@ header{
     float: right;
     width: 100px;
 }
+/* header down */
 .cs_header_down{
-    position: relative;
     background-color: var(--cs_white);
 }
-.cs_header_down .cs_nav_right{
-    float: right;
-}
-.cs_header_down .navbar-light .navbar-nav .nav-link {
+.cs_header_down .navbar-light .navbar-nav .nav-link{
     color: var(--cs_black);
 }
 .cs_header_down .dropdown{
     position: static;
 }
-.cs_header_down .dropdown-menu{
-    margin-top: 0;
+.cs_header_down .dropdown-toggle::after{
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.8rem;
+    font-weight: 900;
+    display: inline-block;
     border: 0;
-    right: 0;
-    left: 0;
+    vertical-align: middle;
+}
+.cs_header_down .dropdown-toggle.show::after{
+    content: "\f106";
 }
 .cs_header_down .navbar-collapse {
     justify-content: space-between;
 }
-.cs_header_down .d-flex{
-    align-items: center;
+.cs_header_down .dropdown-menu{
+    margin-top: -1px;
+    box-shadow:  0px 11px 12px #888888;
+}
+.cs_header_down .list-inline-item img{
+    border: 1px solid transparent;
+    padding: 2px;
+    border-radius: 15px;
+    width: 75%;
+}
+.cs_header_down .list-inline-item img:hover{
+    border-color: #888888;
+    box-shadow: 1px 1px 10px #888888;
+}
+.cs_header_down .list-inline-item a{
+    color: var(--cs_black);
+}
+.cs_header_down .list-inline-item a:hover, .cs_header_down .navbar-light .navbar-nav .nav-link:hover{
+    color: var(--cs_blue_btn);
+}
+.cs_header_down .list-inline-item .cs_circle::before{
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-size: 0.5rem;
+    font-weight: 900;
+    display: inline-block;
+    color: #0d6efd;
+    margin: 0 5px 3px;
+    border: 0;
+    vertical-align: middle;
 }
 .cs_lens{
     width: 30px;
@@ -159,7 +192,6 @@ section:not(#jumbotron, #play_plus, #play_now), footer{
     box-shadow: 0 10px 14px  #888888;
     border-color: #0d6efd;
 }
-
 /* play-5 */
 #play-5 .cs_card{
     cursor: pointer;
@@ -213,9 +245,6 @@ footer{
 }
 .cs_globe{
     width: 20px;
-}
-footer a{
-    color: var(--cs_white);
 }
 footer li{
     padding: 5px 0;
