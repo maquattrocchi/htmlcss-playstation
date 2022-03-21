@@ -1,5 +1,5 @@
 :root{
-    --cs_black: black;
+    --cs_black: rgb(0,0,0);
     --cs_white: white;
     --cs_red: #CD3D0F;
     --cs_darkgrey: #1F1F1F;
@@ -41,6 +41,12 @@ a{
 a:hover{
     color: var(--cs_white);
 }
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2.5rem;
+}
 /* bottoni */
 .cs_btn_contorno{
     padding: 7px 2px;
@@ -71,23 +77,24 @@ a:hover{
     background-color: var(--cs_black);
     color: var(--cs_white);
 }
-#play-5 .cs_btn_contorno:hover, #esplora .cs_btn_contorno:hover{
-    border-color: var(--cs_blue_btn);
-}
-#takes_two .cs_btn_contorno:hover, #jumbotron .cs_btn_contorno:hover{
-    border-color: var(--cs_red);
-}
-#play_plus .cs_btn_contorno:hover{
-    border-color: var(--cs_lightgrey_btn);
-}
-#play_plus .cs_btn:hover{
+.cs_black_blue_btn{
+    background-color: rgba(0, 0, 0, 0.8);
     color: var(--cs_blue_btn);
 }
-#play_now .cs_btn_contorno:hover{
+#games .cs_black_blue_btn:hover, #altri_giochi .cs_black_blue_btn:hover{
+    color: var(--cs_blue_btn);
+}
+#jumbotron .cs_btn_contorno:hover, #games .cs_white_contorno.cs_btn_contorno:hover, #giochi_arrivo .cs_btn_contorno:hover{
     border-color: var(--cs_white);
 }
-#play_now .cs_btn:hover{
+.cs_black_contorno:hover{
+    border-color: rgba(0, 0, 0, 0.8);
+}
+.cs_white_btn:hover{
     color: var(--cs_black);
+}
+#esclusive .cs_btn_contorno:hover, #altri_giochi .cs_btn_contorno:hover{
+    border-color: var(--cs_blue_btn);
 }
 /* header */
 header{
@@ -125,10 +132,9 @@ header{
     display: inline-block;
     border: 0;
     vertical-align: middle;
-    transition: all 0.5s;
 }
 .cs_header_down .dropdown-toggle.show::after{
-    transform: rotate(-180deg);
+    content: "\f106";
 }
 .cs_header_down .navbar-collapse {
     justify-content: space-between;
@@ -136,15 +142,10 @@ header{
 .cs_header_down .dropdown-menu{
     margin-top: -1px;
     box-shadow:  0px 11px 12px #888888;
-    animation: dropdown_show 4s linear;
-    overflow: hidden;
-}
-@keyframes dropdown_show {
-    from{max-height: 0;}
-    to{max-height: 880px;}
 }
 .cs_header_down .list-inline-item img{
     border: 1px solid transparent;
+    padding: 2px;
     border-radius: 15px;
     width: 75%;
 }
@@ -166,6 +167,7 @@ header{
     display: inline-block;
     color: #0d6efd;
     margin: 0 5px 3px;
+    border: 0;
     vertical-align: middle;
 }
 .cs_lens{
@@ -173,111 +175,133 @@ header{
 }
 /* /header */
 /* main */
-section:not(#jumbotron, #play_plus, #play_now), footer{
+section:not(#jumbotron), footer{
     padding: 50px 0;
 }
-/* jumbotron */
 #jumbotron{
-    padding: 200px 0 20px;
+    height: 598px;
     margin-top: 114px;
-    background-image: url(../img/jumbo-bg.png);
-    animation: banner_change 30s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+    background-image: url(../img/ps5-games-hero-banner.jpg);
 }
-@keyframes banner_change {
-    0%{background-image: url(../img/jumbo-bg.png);}
-    50%{background-image: url(../img/stranger-in-paradise-final-fantasy-origin-hero-banner.jpg);}
-}
-.cs_jumbo_default{
-    animation: default_change 30s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
-    opacity: 1;
-}
-@keyframes default_change{
-    0% {opacity: 1}
-    50% {opacity: 0}
-}
-.cs_jumbo_change{
-    animation:  logo_change 30s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.5);
+#jumbotron>div{
+    width: 400px;
+    padding: 30px 20px;
     color: var(--cs_white);
+    background-color: rgba(0, 0, 0, 0.9);
 }
-@keyframes logo_change{
-    0% {opacity: 0}
-    50% {opacity: 1}
+#jumbotron>div>img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+/* esclusive */
+.cs_wrapper{
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+.cs_video_wrapper{
+    width: 400px;
+    position: absolute;
+    bottom: 200px;
+}
+.cs_right_wrapper{
+    right: 45px;
+}
+.cs_left_wrapper{
+    left: 45px;
+}
+.fa-circle-play{
+    font-size: 5rem;
+}
+.cs_video_wrapper:hover, .cs_wrapper:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 7px 12px #888888;
 }
 /* games */
-#games img{
+#games{
+    background-image: url(../img/ps5-games-page-background-block-desktop-03-en-19jul21.jpg);
+}
+.card{
+    border: none;
+    background-color: transparent;
+}
+.cs_w_90{
+    width: 90%;
+}
+.games_card .cs_btn{
+    display: block;
+    text-align: center;
+}
+.games_card .cs_btn_contorno{
+    padding: 7px 7px;
     position: relative;
-    bottom: 0;
-    border: 2px solid transparent;
-    padding: 2px;
-    border-radius: 15px;
-    transition: all 0.8s;
+    display: block;
+    bottom: 100px;
 }
-#games img:hover{
-    bottom: 20px;
-    box-shadow: 0 10px 14px  #888888;
-    border-color: #0d6efd;
+.games_card .card-body{
+    margin-top: -105px;
 }
-/* play-5 */
-#play-5 .cs_card{
-    cursor: pointer;
-    height: 100%;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-}
-#play-5 h2{
-    font-size: 2rem;
-}
-.disabled_card{
-    opacity: 0.5;
-}
-#play-5 .cs_card:hover{
-    opacity: 1;
-    border-color: #0d6efd;
-}
-/* takes-two */
-#takes_two{
-    background-image: url(../img/it-takes-two-hero-banner-desktop.jpg);
-}
-/* nuove uscite */
-#nuove_uscite{
+/* giochi in arrivo */
+#giochi_arrivo{
+    color: var(--cs_white);
     background-color: var(--cs_darkgrey);
 }
-#nuove_uscite .card, #esplora .card{
+#giochi_arrivo .cs_video_wrapper{
+    bottom: 250px;
+}
+#giochi_avvincenti .card, #esplora .card{
     background-color: transparent;
     border: none;
 }
-#nuove_uscite img{
+#giochi_avvincenti img{
     border-radius: 20px;
     transition: all 0.5s;
 }
-#nuove_uscite img:hover{
+#giochi_avvincenti img:hover{
     transform: scale(1.1);
 }
-#nuove_uscite .card-body{
+#giochi_avvincenti .card-body{
     padding: 1rem 0;
 }
-/* #play_plus */
-#play_plus{
-    background-color: var(--cs_lightgrey_bg);
+/* accordion */
+.accordion-button {
+    color: var(--cs_black);
+    font-size: 1.5rem;
 }
-/* play now */
-#play_now{
-    background-color: var(--cs_blue);
+.cs_grey{
+    background-color: rgb(240, 240, 240);
 }
-/* social */
-#social img{
-    transition: all 0.5s;
+.accordion-button:not(.collapsed){
+    color: var(--cs_white);
+    background-color: var(--cs_blue_btn);
 }
-#social img:hover{
-    transform: scale(1.1);
+.accordion-button:hover{
+    color: var(--cs_white);
+    background-color: var(--cs_blue_btn);
 }
-/* /main */
+.accordion-button::after {
+    content: "\2b";
+    font-family: "Font Awesome 5 Free";
+    font-size: 1rem;
+    font-weight: 900;
+    vertical-align: middle;
+    background: none;
+}
+button:not(.collapsed)::after {
+    background-image: none;
+    content: '\f068';
+    font-family: "Font Awesome 5 Free";
+    font-size: 1rem;
+    font-weight: 900;
+    vertical-align: middle;
+}
+.accordion-body p{
+    font-size: 1.4rem;
+}
+.accordion-body a{
+    color: var(--cs_blue_btn);
+    text-decoration: underline;
+}
 /* footer */
 footer{
     background-color: var(--cs_lightblue);
@@ -292,19 +316,4 @@ footer{
 footer li{
     padding: 5px 0;
 }
-/* media */
-@media screen and (min-width: 768px) {
-    .cs_width_50{
-        width: 75%;
-    }
-}
-@media screen and (min-width: 992px) {
-    .cs_width_50{
-        width: 50%;
-    }
-    .cs_jumbo_change{
-        padding: 0;
-        background-color: transparent;
-        color: var(--cs_black);
-    }
-}
+/* /footer */
